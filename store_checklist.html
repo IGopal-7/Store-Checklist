@@ -190,6 +190,47 @@
 </tbody>
 </table>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const thankYouMessage = document.createElement("div");
+  thankYouMessage.innerHTML = "<h3>✅ Thank you! Your data has been submitted.</h3>";
+  thankYouMessage.style.display = "none";
+  thankYouMessage.style.color = "green";
+  document.body.appendChild(thankYouMessage);
+
+  const displayData = document.createElement("pre");
+  displayData.id = "submittedData";
+  document.body.appendChild(displayData);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Show thank you message
+    thankYouMessage.style.display = "block";
+    setTimeout(() => {
+      thankYouMessage.style.display = "none";
+      displayData.textContent = JSON.stringify(data, null, 2);
+    }, 2000);
+
+    // Save to localStorage
+    localStorage.setItem("submittedFormData", JSON.stringify(data));
+  });
+
+  // Load previously submitted data if available
+  const savedData = localStorage.getItem("submittedFormData");
+  if (savedData) {
+    displayData.textContent = JSON.stringify(JSON.parse(savedData), null, 2);
+  }
+});
+</script>
+
 </body></div>
 <div class="section">
 <meta charset="utf-8"/>
@@ -288,6 +329,47 @@
 </tr>
 </tbody>
 </table>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const thankYouMessage = document.createElement("div");
+  thankYouMessage.innerHTML = "<h3>✅ Thank you! Your data has been submitted.</h3>";
+  thankYouMessage.style.display = "none";
+  thankYouMessage.style.color = "green";
+  document.body.appendChild(thankYouMessage);
+
+  const displayData = document.createElement("pre");
+  displayData.id = "submittedData";
+  document.body.appendChild(displayData);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Show thank you message
+    thankYouMessage.style.display = "block";
+    setTimeout(() => {
+      thankYouMessage.style.display = "none";
+      displayData.textContent = JSON.stringify(data, null, 2);
+    }, 2000);
+
+    // Save to localStorage
+    localStorage.setItem("submittedFormData", JSON.stringify(data));
+  });
+
+  // Load previously submitted data if available
+  const savedData = localStorage.getItem("submittedFormData");
+  if (savedData) {
+    displayData.textContent = JSON.stringify(JSON.parse(savedData), null, 2);
+  }
+});
+</script>
+
 </body></div>
 <div class="section">
 <meta charset="utf-8"/>
@@ -392,6 +474,47 @@
 </tr>
 </tbody>
 </table>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const thankYouMessage = document.createElement("div");
+  thankYouMessage.innerHTML = "<h3>✅ Thank you! Your data has been submitted.</h3>";
+  thankYouMessage.style.display = "none";
+  thankYouMessage.style.color = "green";
+  document.body.appendChild(thankYouMessage);
+
+  const displayData = document.createElement("pre");
+  displayData.id = "submittedData";
+  document.body.appendChild(displayData);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Show thank you message
+    thankYouMessage.style.display = "block";
+    setTimeout(() => {
+      thankYouMessage.style.display = "none";
+      displayData.textContent = JSON.stringify(data, null, 2);
+    }, 2000);
+
+    // Save to localStorage
+    localStorage.setItem("submittedFormData", JSON.stringify(data));
+  });
+
+  // Load previously submitted data if available
+  const savedData = localStorage.getItem("submittedFormData");
+  if (savedData) {
+    displayData.textContent = JSON.stringify(JSON.parse(savedData), null, 2);
+  }
+});
+</script>
+
 </body></div>
 <div class="section">
 <label>Checklist Items:</label>
@@ -480,5 +603,46 @@ document.getElementById("submitButton").addEventListener("click", function() {
         console.error(error);
     });
 });
-</script></body>
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector("form");
+  const thankYouMessage = document.createElement("div");
+  thankYouMessage.innerHTML = "<h3>✅ Thank you! Your data has been submitted.</h3>";
+  thankYouMessage.style.display = "none";
+  thankYouMessage.style.color = "green";
+  document.body.appendChild(thankYouMessage);
+
+  const displayData = document.createElement("pre");
+  displayData.id = "submittedData";
+  document.body.appendChild(displayData);
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    // Show thank you message
+    thankYouMessage.style.display = "block";
+    setTimeout(() => {
+      thankYouMessage.style.display = "none";
+      displayData.textContent = JSON.stringify(data, null, 2);
+    }, 2000);
+
+    // Save to localStorage
+    localStorage.setItem("submittedFormData", JSON.stringify(data));
+  });
+
+  // Load previously submitted data if available
+  const savedData = localStorage.getItem("submittedFormData");
+  if (savedData) {
+    displayData.textContent = JSON.stringify(JSON.parse(savedData), null, 2);
+  }
+});
+</script>
+
+</body>
 </html>
