@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<script>
+function submitForm() {
+  const data = {
+    storeName: document.getElementById("storeName").value,
+    location: document.getElementById("location").value,
+    inspectedBy: document.getElementById("inspectedBy").value,
+    // Add other fields here...
+    comments: document.getElementById("comments").value
+  };
+
+  fetch("YOUR_WEB_APP_URL", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert("Form submitted successfully!");
+  })
+  .catch(error => {
+    alert("Error submitting form.");
+    console.error(error);
+  });
+}
+</script>
 
 <html>
 <head>
