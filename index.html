@@ -1,32 +1,4 @@
 <!DOCTYPE html>
-<script>
-function submitForm() {
-  const data = {
-    storeName: document.getElementById("storeName").value,
-    location: document.getElementById("location").value,
-    inspectedBy: document.getElementById("inspectedBy").value,
-    // Add other fields here...
-    comments: document.getElementById("comments").value
-  };
-
-  fetch("https://script.google.com/macros/s/AKfycbxTa5buaOmNgGMKsbrefz2drIVmpBM13JwYRXFOpWz22bRX3sKAwUy1RRScDLjsChdh0Q/exec
-", {
-    method: "POST",
-    body: JSON.stringify(data),
-    headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(response => response.text())
-  .then(result => {
-    alert("Form submitted successfully!");
-  })
-  .catch(error => {
-    alert("Error submitting form.");
-    console.error(error);
-  });
-}
-</script>
 
 <html>
 <head>
@@ -106,7 +78,6 @@ function submitForm() {
       resize: vertical;
     }
   </style>
-
 <body>
 <h2>Assessment Dashboard</h2>
 <div class="section">
@@ -256,7 +227,6 @@ function submitForm() {
       resize: vertical;
     }
   </style>
-
 <body>
 <h2>Store Management Assessment</h2>
 <table>
@@ -356,7 +326,6 @@ function submitForm() {
       resize: vertical;
     }
   </style>
-
 <body>
 <h2>Display Management Assessment</h2>
 <table>
@@ -467,7 +436,49 @@ function submitForm() {
 <label for="comments">Additional Comments:</label>
 <textarea id="comments" name="comments" placeholder="Your observations or suggestions..." rows="4"></textarea>
 </div>
-<button type="button" onclick="submitForm()">Submit</button>
-</form>
-</body>
+
+<button id="submitButton" type="button">Submit</button><script>
+const web_app_url = "https://script.google.com/macros/s/AKfycbzMjwP8rR8Kq-9FM3gakezMuYicIlYY9zAaIklggILpFxqKFBLdm1H-Z47rPUyRnZ3D7A/exec
+"; // Replace with your actual Web App URL
+
+document.getElementById("submitButton").addEventListener("click", function() {
+    const data = {
+        storeName: document.getElementById("storeName")?.value || "",
+        location: document.getElementById("location")?.value || "",
+        inspectedBy: document.getElementById("inspectedBy")?.value || "",
+        sales: document.getElementById("sales")?.value || "",
+        avgCustomerPrice: document.getElementById("avgCustomerPrice")?.value || "",
+        footfall: document.getElementById("footfall")?.value || "",
+        yoy: document.getElementById("yoy")?.value || "",
+        mom: document.getElementById("mom")?.value || "",
+        top500: document.getElementById("top500")?.value || "",
+        avgMonthlySale: document.getElementById("avgMonthlySale")?.value || "",
+        skusAvailable: document.getElementById("skusAvailable")?.value || "",
+        ipSaleContribution: document.getElementById("ipSaleContribution")?.value || "",
+        staffCount: document.getElementById("staffCount")?.value || "",
+        staffRemarks: document.getElementById("staffRemarks")?.value || "",
+        cleanlinessRating: document.getElementById("cleanlinessRating")?.value || "",
+        staffBehaviorRating: document.getElementById("staffBehaviorRating")?.value || "",
+        displayRating: document.getElementById("displayRating")?.value || "",
+        comments: document.getElementById("comments")?.value || ""
+    };
+
+    fetch(https://script.google.com/macros/s/AKfycbzMjwP8rR8Kq-9FM3gakezMuYicIlYY9zAaIklggILpFxqKFBLdm1H-Z47rPUyRnZ3D7A/exec
+, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(response => response.text())
+    .then(result => {
+        alert("Form submitted successfully!");
+    })
+    .catch(error => {
+        alert("Error submitting form.");
+        console.error(error);
+    });
+});
+</script></body>
 </html>
